@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Debate Website</title>
+  <style>
+    /* Updated styling for the page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f1f1f1;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .window {
+      width: 48%;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow-y: scroll;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      resize: vertical;
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Debate Website</h1>
+  <div class="container">
+    <div class="window">
+      <h2>Text 1</h2>
+      <textarea id="text1" placeholder="Enter your text for debate"></textarea>
+    </div>
+    <div class="window">
+      <h2>Text 2</h2>
+      <textarea id="text2" placeholder="Enter your text for debate"></textarea>
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="button" onclick="compareTexts()">Compare Texts</button>
+  </div>
+
+  <script>
+    function compareTexts() {
+      var text1 = document.getElementById('text1').value;
+      var text2 = document.getElementById('text2').value;
+
+      // Display the texts in separate windows
+      var window1 = window.open('', '_blank', 'width=500,height=400');
+      var window2 = window.open('', '_blank', 'width=500,height=400');
+
+      // Write the texts into the windows
+      window1.document.write('<h2>Text 1</h2><p>' + text1 + '</p>');
+      window2.document.write('<h2>Text 2</h2><p>' + text2 + '</p>');
+
+      // Close the document to ensure proper rendering
+      window1.document.close();
+      window2.document.close();
+    }
+  </script>
+</body>
+</html>

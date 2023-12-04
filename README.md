@@ -1,2 +1,2 @@
 # Debate-Motions
-just to keep my debate motions
+Repository to hold debate motions
